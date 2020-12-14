@@ -1,0 +1,84 @@
+@mixin placement-picture($placement) {
+  display: flex;
+  padding-top: 10px;
+  justify-content: center;
+  grid-column: $placement;
+}
+
+.publisher {
+  display: grid;
+  height: 100vh;
+  grid-template-rows: 120px 5fr 60px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  grid-template-columns: 1fr;
+
+  &-header {
+    grid-row: 1;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border-bottom: 1px solid lightgray;
+
+    > h1 {
+      text-align: center;
+    }
+
+    .main-nav {
+      background-color: #f59292;
+      color: black;
+      display: flex;
+      justify-content: center;
+
+      & a {
+        float: left;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+
+        &:hover {
+          background-color: #ddd;
+          color: black;
+        }
+
+        &.active {
+          color: white;
+        }
+      }
+    }
+  }
+
+  &-main {
+    grid-row: 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 100px;
+
+    .picture-1 {
+      @include placement-picture(1);
+    }
+
+    .picture-2 {
+      @include placement-picture(2);
+    }
+
+    .picture-3 {
+      @include placement-picture(3);
+    }
+  }
+
+  &-footer {
+    grid-row: 3;
+    display: flex;
+    background-color: #ffd28f;
+    border-top: 1px solid #eaeaea;
+    justify-content: center;
+  }
+}
+
+.fit-image {
+  $image-size: 350px;
+  height: $image-size;
+  width: $image-size;
+}
