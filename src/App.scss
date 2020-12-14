@@ -1,6 +1,5 @@
 @mixin placement-picture($placement) {
   display: flex;
-  padding-top: 10px;
   justify-content: center;
   grid-column: $placement;
 }
@@ -17,14 +16,14 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
-    border-bottom: 1px solid lightgray;
 
     > h1 {
       text-align: center;
     }
 
     .main-nav {
-      background-color: #f59292;
+      $pink: #f59292;
+      background-color: $pink;
       color: black;
       display: flex;
       justify-content: center;
@@ -69,9 +68,10 @@
   }
 
   &-footer {
+    $yellow: #ffd28f;
     grid-row: 3;
     display: flex;
-    background-color: #ffd28f;
+    background-color: $yellow;
     border-top: 1px solid #eaeaea;
     justify-content: center;
   }
