@@ -5,6 +5,9 @@
 }
 
 .publisher {
+  $small-size: 12px;
+  $link-size: 15px;
+  $big-size: 18px;
   display: grid;
   height: 100vh;
   grid-template-rows: 120px 5fr 60px;
@@ -16,6 +19,7 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
+    font-size: $big-size;
 
     > h1 {
       text-align: center;
@@ -34,10 +38,10 @@
         text-align: center;
         padding: 14px 16px;
         text-decoration: none;
-        font-size: 17px;
+        font-size: $link-size;
 
         &:hover {
-          background-color: #ddd;
+          background-color: #fddada;
           color: black;
         }
 
@@ -74,6 +78,7 @@
     background-color: $yellow;
     border-top: 1px solid #eaeaea;
     justify-content: center;
+    font-size: $small-size;
   }
 }
 
